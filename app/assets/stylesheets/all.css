@@ -1,0 +1,18 @@
+
+nav li a{
+  color:#eee;
+  font-size:130%;
+
+
+}
+
+
+nav li{
+  padding: 10px 10px
+}
+
+a.navbar-brand{
+  font-size:150%;
+  font-weight:bold;
+  color: #F1B82D;
+}

@@ -1,0 +1,39 @@
+<h1>Listing sponsors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>User</th>
+      <th>Donation</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Rep</th>
+      <th>Image url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sponsors.each do |sponsor| %>
+      <tr>
+        <td><%= sponsor.name %></td>
+        <td><%= sponsor.level %></td>
+        <td><%= sponsor.user_id %></td>
+        <td><%= sponsor.donation %></td>
+        <td><%= sponsor.email %></td>
+        <td><%= sponsor.phone %></td>
+        <td><%= sponsor.rep %></td>
+        <td><%= sponsor.image_url %></td>
+        <td><%= link_to 'Show', sponsor %></td>
+        <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
+        <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sponsor', new_sponsor_path %>

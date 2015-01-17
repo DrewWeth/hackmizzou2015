@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hackmizzou2015</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="hackmizzou">
+
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Hack Mizzou</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Sponsors <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Prizes</a></li>
+          <li><a href="#">FAQ</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a><button class="btn btn-lg btn-warning">Apply</button></a></li>
+          <li><a><button class="btn btn-lg clear gold-border">Sponsor</button></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <% unless params["controller"] == "static" %>
+    <div class="container">
+  <% end %>
+
+  <%= yield %>
+
+  <% unless params["controller"] == "static" %>
+    </div>
+  <% end %>
+
+</body>
+</html>

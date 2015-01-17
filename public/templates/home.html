@@ -1,0 +1,15 @@
+<div ng-app="hackmizzou">
+  <div ng-view>
+
+    <!-- public/templates/home.html -->
+
+    This is the home page.
+
+    The owner is {{owner}}
+
+    <ul ng-repeat="sponsor in sponsors">
+      <li><a ng-click="viewSponsor(sponsor.id)">{{ sponsor.name }}</a></li>
+    </ul>
+
+  </div>
+</div>
