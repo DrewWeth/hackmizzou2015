@@ -7,39 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="hackmizzou">
+  <div ng-controller="layoutCtrl">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'Hack Mizzou', root_path, {:class => "navbar-brand" } %>
+        </div>
 
-  <nav class="navbar navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Hack Mizzou</a>
-      </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!-- <li><a href="#faq">FAQ</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#prizes">Prizes</a></li> -->
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Sponsors <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Schedule</a></li>
-          <li><a href="#">Prizes</a></li>
-          <li><a href="#">FAQ</a></li>
 
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a><button class="btn btn-lg btn-warning">Apply</button></a></li>
-          <li><a><button class="btn btn-lg clear gold-border">Sponsor</button></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a><button ng-click="applyAlert()" class="btn btn-warning">Apply</button></a></li>
+            <li><a><button ng-click="sponsorAlert()" class="btn clear gold-border">Sponsor</button></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
   <% unless params["controller"] == "static" %>
-    <div class="container">
+    <div class="container buffer-top">
   <% end %>
 
   <%= yield %>
@@ -47,6 +48,35 @@
   <% unless params["controller"] == "static" %>
     </div>
   <% end %>
+
+
+  <script type="text/javascript">
+    $(window).scroll(function(){
+
+      var scrollPosition = $(window).scrollTop();
+
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('.navbar-default').css('background', 'black');
+
+      }
+      else{
+        if (scrollPosition < 30){
+          console.log('at top.');
+          $('.navbar-default').css('background', 'transparent');
+        }
+        else{
+          $('.navbar-default').css('background', 'black');
+        }
+
+
+      }
+
+
+    });
+
+
+
+  </script>
 
 </body>
 </html>

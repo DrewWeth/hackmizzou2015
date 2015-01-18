@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post 'email_lists/submit' => 'email_lists#submit'
+  resources :email_lists
+
   root 'static#index'
 
   resources :sponsors

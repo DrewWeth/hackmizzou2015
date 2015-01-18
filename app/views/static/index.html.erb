@@ -4,33 +4,38 @@
   <source src="video.webm" type="video/webm">
   <source src="https://s3.amazonaws.com/echousa/video.mp4" type="video/mp4">
   </video>
-  <%= image_tag('Facade.png', :class => "facade") %>
+  <!-- <%= image_tag('Facade.png', :class => "facade") %> -->
 
   <div class="overlay">
 
 
-    <div class="col-md-12" class="center-text">
+    <div class="col-sm-12" class="center-text">
       <center>
         <div class="wowzer">
-          <%= image_tag('hackmizzou.png') %>
+          <%= image_tag('hackmizzou.png', {:class=> 'img-width'}) %>
         </div>
 
         <div class="desc">
-          Co-hosted by Tradebot.
+          Tentitive date: October 3-5, 2015
         </div>
+        <div class="desc spacing">
+          <timer end-time="1443830784000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+        </div>
+
 
         <div class="email-desc">
           Join the mailing list. We'll keep you in the loop!
         </div>
 
-        <div ng-controller="email-form">
-          <form novalidate>
-            <input ng-model="email" type="email" class="form-control small spacing" name="email" placeholder="Email"/>
-            <input id="email-submit" class="form-control small gold-border spacing clear" type="submit" value="Go!">
+        <div ng-controller="IntroCtrl">
+          <form novalidate name="emailForm">
+            <input ng-model="user.email" type="email" class="form-control small spacing" name="email" placeholder="Email"/>
+            <input id="email-submit" ng-click="submitUser(user)" class="form-control small gold-border spacing clear" type="submit" value="Go!">
           </form>
+          <div>
+            Your email address is... {{user.email}}
+          </div>
         </div>
-
-        <div>Your email address is... {{email}}</div>
 
       </center>
     </div>
@@ -38,19 +43,29 @@
   </div>
 </div>
 
-<div ng-controller="HackMizzouCtrl">
 
-  <h1>Static#index</h1>
-  <p>Find me in app/views/static/index.html.erb</p>
-
-
-  <div id="sponsors">
-    <ul ng-repeat="sponsor in sponsors">
-      <li>{{sponsor.name}}</li>
-    </ul>
+<div class="container footer">
+  <div class="row">
+    <div class="col-md-12">
+      <center><%= image_tag('hackmizzou.png', {:class=>'img-width'}) %></center>
+    </div>
   </div>
-
-  <div class="long">
+  <div class="row buffer">
+    <div class="col-md-4">
+      <p>
+      Hack Mizzou is organized by <a href="http://acm.missouri.edu/">Mizzou Computing Association (MCA)</a>
+    </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+      <a href="https://mlh.io/">Major League Hackers</a>
+    </p>
+    </div>
+    <div class="col-md-4">
+    <p>
+      Questions, comments, concerns should be directed to Drew at <%= mail_to 'agwrnd@mail.missouri.edu' %>
+    </p>
+    </div>
   </div>
 
 </div>

@@ -1,18 +1,38 @@
 
 nav li a{
   color:#eee;
-  font-size:130%;
+
+  font-size:150%;
 
 
 }
 
+.buffer-top{
+  margin-top:60px;
+}
+
+ul.nav.navbar-nav{
+
+  height:100%;
+}
 
 nav li{
   padding: 10px 10px
 }
 
+
 a.navbar-brand{
-  font-size:150%;
+  line-height: 30px;
+  color: #F1B82D;
+}
+
+.navbar-toggle{
+
+  color:#eee;
+}
+
+a.navbar-brand{
+  font-size:200%;
   font-weight:bold;
   color: #F1B82D;
 }
