@@ -28,13 +28,15 @@
         </div>
 
         <div ng-controller="IntroCtrl">
+
           <form novalidate name="emailForm">
-            <input ng-model="user.email" type="email" class="form-control small spacing" name="email" placeholder="Email"/>
-            <input id="email-submit" ng-click="submitUser(user)" class="form-control small gold-border spacing clear" type="submit" value="Go!">
+            <input ng-model="user.email" type="email" class="form-control transparent small spacing" name="email" placeholder="Email"/>
+            <label class="form-control transparent small spacing">
+              <input type="checkbox" name="sponsor" ng-model="user.sponsor">  Sponsor
+            </label>
+            <input id="email-submit" ng-click="submitUser(user)" class="form-control small gold-border spacing clear" type="submit" value="Subscribe!">
           </form>
-          <div>
-            Your email address is... {{user.email}}
-          </div>
+          {{user.sponsor}}
         </div>
 
       </center>

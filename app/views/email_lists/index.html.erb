@@ -1,6 +1,6 @@
 <h1>Listing email_lists</h1>
 
-<table>
+<table style="background:#eee">
   <thead>
     <tr>
       <th>Email</th>
@@ -14,11 +14,9 @@
     <% @email_lists.each do |email_list| %>
       <tr>
         <td><%= email_list.email %></td>
+        <td><%= email_list.sponsor %></td>
         <td><%= email_list.name %></td>
         <td><%= email_list.active %></td>
-        <td><%= link_to 'Show', email_list %></td>
-        <td><%= link_to 'Edit', edit_email_list_path(email_list) %></td>
-        <td><%= link_to 'Destroy', email_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

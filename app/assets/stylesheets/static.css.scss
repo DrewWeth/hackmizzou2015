@@ -30,6 +30,8 @@ html,body{
   font-size:130%;
   font-weight: bold;
   color: #eee;
+}
+.transparent{
   background: transparent;
 }
 
@@ -105,8 +107,16 @@ html,body{
   margin-top:80px;
 }
 
-#email-submit:hover{
+#email-submit{
+  color:black;
   background: #F1B82D;
+
+}
+
+#email-submit:hover{
+  color:#F1B82D;
+  background: #eee;
+
 }
 
 .desc{
@@ -174,6 +184,8 @@ html,body{
   margin-top:50px;
 }
 
+
+
 video#bgvid {
   // position: relative; right: 0; bottom: 0;
   min-width: 100%; min-height: 100%;
@@ -191,6 +203,6 @@ video#bgvid { transition: 1s opacity; }
 video { display: block; }
 
 @media screen and (max-device-width: 800px) {
-  html { background: url(video.jpg) #000 no-repeat center center fixed; }
+  html { background: url(video.jpg) #000 no-repeat center center absolute; }
   #bgvid { display: none; }
 }

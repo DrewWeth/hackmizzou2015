@@ -46,10 +46,10 @@
 
   $scope.resetUser = ()->
     $scope.user = {};
-
+    $scope.user["sponsor"] = false
   $scope.submitUser = (user) ->
     if !$scope.emailForm.email.$pristine && $scope.emailForm.email != null && $scope.emailForm.$valid
-      url = './email_lists' + '?email=' + $scope.user.email
+      url = './email_lists' + '?email=' + $scope.user.email + "&sponsor=" + $scope.user.sponsor
       console.log("Url is: " + url);
       $http.post(url, message: {email: $scope.user.email}).success(()->
         swal({title: "Thanks " + $scope.user.email + "!", text: "We'll let you know more when things develop!", type:"success", confirmButtonText: "Okay", allowOutsideClick: true, confirmButtonColor: "#F1B82D"});
