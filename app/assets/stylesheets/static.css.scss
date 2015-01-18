@@ -194,7 +194,7 @@ video#bgvid {
   background: url(polina.jpg) no-repeat;
   background-size: cover;
   -webkit-filter: sepia; /*sepia, hue-rotate, invert....*/
-  -webkit-filter: brightness(30%);
+  -webkit-filter: brightness(50%);
 }
 
 video#bgvid { transition: 1s opacity; }
