@@ -29,6 +29,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'rails_serve_static_assets', group: [:production]
+
 group :production do
   # Postgres for heroku
   gem 'pg'
