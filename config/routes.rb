@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :email_lists
 
   root 'static#index'
-
+  get '/prep' => 'static#prep'
   resources :sponsors
 
 

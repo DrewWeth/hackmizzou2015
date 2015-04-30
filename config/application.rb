@@ -36,6 +36,7 @@ module Hackmizzou2015
           '.html', '.erb', '.haml',                 # Templates
           '.png',  '.gif', '.jpg', '.jpeg',         # Images
           '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+          '.mp4',
         ]
       end)
     end
