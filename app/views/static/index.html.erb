@@ -1,51 +1,58 @@
-<div class="bgvid">
+  <div class="vid">
+    <video autoplay loop poster="polina.jpg" id="bgvid">
+      <!-- <source src="video.webm" type="video/webm"> -->
+      <!-- <source src="https://s3.amazonaws.com/echousa/video2.mp4" type="video/mp4"> -->
+        <source src="<%= asset_path('brain.mp4') %>" type="video/mp4">
+    </video>
 
-  <video autoplay loop poster="polina.jpg" id="bgvid">
-  <source src="video.webm" type="video/webm">
-  <source src="https://s3.amazonaws.com/echousa/video2.mp4" type="video/mp4">
-  </video>
-  <!-- <%= image_tag('Facade.png', :class => "facade") %> -->
-
-  <div class="overlay">
-
-
-    <div class="col-sm-12" class="center-text">
-      <center>
-        <div class="wowzer">
-          <%= image_tag('hackmizzou.png', {:class=> 'img-width'}) %>
+    <div class="container buffer-bottom">
+      <div class="overlay">
+        <div class="row">
+          <div class="col-sm-12" class="center-text">
+            <center>
+              <div class="wowzer">
+                <%= image_tag('hackmizzou.png', {:class=> 'img-width'}) %>
+              </div>
+            </center>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <center>
+              <div class="desc">
+                Tentitive date: October 3-5, 2015
+              </div>
+              <div class="desc spacing">
+                <timer end-time="1443830784000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+              </div>
+            </center>
+          </div>
         </div>
 
-        <div class="desc">
-          Tentitive date: October 3-5, 2015
+        <div class="row">
+          <div class="col-sm-12">
+            <center>
+              <div class="email-desc">
+                Join the mailing list. We'll keep you in the loop!
+              </div>
+              <div ng-controller="IntroCtrl">
+                <form novalidate name="emailForm">
+                  <input ng-model="user.email" type="email" class="form-control transparent small spacing" name="email" placeholder="Email"/>
+                  <label class="form-control transparent small spacing">
+                    <input type="checkbox" name="sponsor" ng-model="user.sponsor">  Sponsor
+                  </label>
+                  <input id="email-submit" ng-click="submitUser(user)" class="form-control small gold-border spacing clear" type="submit" value="Subscribe!">
+                </form>
+              </div>
+            </center>
+          </div>
         </div>
-        <div class="desc spacing">
-          <timer end-time="1443830784000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
-        </div>
-
-
-        <div class="email-desc">
-          Join the mailing list. We'll keep you in the loop!
-        </div>
-
-        <div ng-controller="IntroCtrl">
-
-          <form novalidate name="emailForm">
-            <input ng-model="user.email" type="email" class="form-control transparent small spacing" name="email" placeholder="Email"/>
-            <label class="form-control transparent small spacing">
-              <input type="checkbox" name="sponsor" ng-model="user.sponsor">  Sponsor
-            </label>
-            <input id="email-submit" ng-click="submitUser(user)" class="form-control small gold-border spacing clear" type="submit" value="Subscribe!">
-          </form>
-          {{user.sponsor}}
-        </div>
-
-      </center>
+      </div>
     </div>
-
   </div>
 </div>
 
-
+<div class="bg-dark-gray">
 <div class="container footer">
   <div class="row">
     <div class="col-md-12">
@@ -55,19 +62,20 @@
   <div class="row buffer">
     <div class="col-md-4">
       <p>
-      Hack Mizzou is organized by <a href="http://acm.missouri.edu/">Mizzou Computing Association (MCA)</a>
-    </p>
+        Hack Mizzou is organized by <a href="http://mca.missouri.edu/">Mizzou Computing Association (MCA)</a>
+      </p>
     </div>
     <div class="col-md-4">
       <p>
-      <a href="https://mlh.io/">Major League Hackers</a>
-    </p>
+        <a href="https://mlh.io/">Major League Hackers</a>
+      </p>
     </div>
     <div class="col-md-4">
-    <p>
-      Questions, comments, concerns should be directed to Drew at <%= mail_to 'agwrnd@mail.missouri.edu' %>
-    </p>
+      <p>
+        Questions, comments, concerns should be directed to Drew at <%= mail_to 'contact@hackmizzou.com' %>
+      </p>
     </div>
   </div>
 
+</div>
 </div>
