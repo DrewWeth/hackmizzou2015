@@ -11,11 +11,16 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+  <%= javascript_include_tag 'scroll.js' %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+  <script>
+    var shiftWindow = function() { scrollBy(0, -70) };
+    window.addEventListener("hashchange", shiftWindow);
+    function load() { if (window.location.hash) shiftWindow(); }
+  </script>
 </head>
-<body>
+<body onload="load()">
 
 <style>
 
@@ -52,9 +57,11 @@ div.sep{
 .offset:before {
 	display: block;
  	content: " ";
-  	height: 150px;      /* Give height of your fixed element */
-        margin-top: -150px; /* Give negative margin of your fixed element */
-        visibility: hidden;
+  z-index:-1;
+  position:fixed;
+	padding-top: 70px;      /* Give height of your fixed element */
+  margin-top: -70px; /* Give negative margin of your fixed element */
+  visibility: hidden;
 }
 
 .navbar-fixed {
@@ -63,7 +70,7 @@ div.sep{
   position: fixed;
   width: 100%;
   margin-bottom:30px;
-  margin-bottom:-30px;
+
 }
 
 #body_div {
@@ -125,6 +132,9 @@ div.sep{
   font-weight: 700;
 }
 
+.active {
+  border-bottom: 5px solid #713487;
+}
 
 </style>
 
@@ -138,8 +148,8 @@ div.sep{
 </div>
 
 
-  <nav id='nav_bar'>
-  <ul class='nav_links'>
+  <nav class="nav" id='nav_bar'>
+  <ul id="nav-list" class='nav_links'>
     <li><a href="#who">Who</a></li>
     <li><a href="#what">What</a></li>
     <li><a href="#when">When</a></li>
@@ -157,6 +167,13 @@ div.sep{
 
       HackMizzou is a weekend long tech conference where participants start with an idea and leave with a product. HackMizzou encourages students to learn new technologies, experiment, and innovate in a risk free environment. Students also have the ability to apply to internships/full-time jobs, enjoy conference-like tech talks, and a weekend of free food and transportation.
     </p>
+
+    <div class="row">
+      <div class="col-sm-12">
+
+        <img class="img-responsive" src="http://i.imgur.com/7hPhVp3.jpg">
+      </div>
+    </div>
 
     <h1 id="who" class="bold offset">Who Benefits From HackMizzou?</h1>
     <div class="sep">STUDENTS</div>
@@ -186,6 +203,12 @@ div.sep{
     <p class="friendly">
       The Mizzou Computing Association (MCA) in association with University of Missouri Engineering School and Major League Hacking (MLH).
     </p>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <img src="http://i.imgur.com/AycdH2B.jpg" class="img-responsive">
+      </div>
+    </div>
 
     <h1 id="when" class="bold offset">When Is HackMizzou?</h1>
     <p class="friendly">
@@ -385,11 +408,11 @@ div.sep{
 
 
                         <div class="col-sm-4 margin-thin">
-                          <img src="http://i.imgur.com/Mg32DVd.jpg" class="img-responsive">
+                          <img src="http://i.imgur.com/DoQzcmr.jpg" class="img-responsive">
                         </div>
 
                         <div class="col-sm-4 margin-thin">
-                          <img src="http://i.imgur.com/Mg32DVd.jpg" class="img-responsive">
+                          <img src="http://i.imgur.com/rsj0GXK.jpg" class="img-responsive">
                         </div>
 
                         <div class="col-sm-4 margin-thin">

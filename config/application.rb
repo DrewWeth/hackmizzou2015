@@ -37,6 +37,7 @@ module Hackmizzou2015
           '.png',  '.gif', '.jpg', '.jpeg',         # Images
           '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
           '.mp4',
+          '.js',
         ]
       end)
     end
